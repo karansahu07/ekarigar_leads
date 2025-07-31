@@ -1,1 +1,8 @@
-ErrorDocument 404 /ekarigar_leads/index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /ekarigar_leads/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /ekarigar_leads/index.html [L]
+</IfModule>
